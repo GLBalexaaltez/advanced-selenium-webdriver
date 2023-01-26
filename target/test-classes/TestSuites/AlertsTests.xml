@@ -1,0 +1,23 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="CheckboxesTestSuite" verbose="1">
+	
+	<test name="AlertTest-CH">
+		<parameter name="expectedAlertMessage" value="I am a JS Alert"></parameter>
+		<parameter name="expectedResultMessage" value="You successfully clicked an alert"></parameter>
+		<parameter name="browser" value="chrome"></parameter>
+		<classes>
+			<class name="com.herokuapp.theinternet.tests.alertstests.AlertsTests"/>
+		</classes>
+	</test>
+
+	<test name="AlertTest-FF">
+		<parameter name="expectedAlertMessage" value="I am a JS Alert"></parameter>
+		<parameter name="expectedResultMessage" value="You successfully clicked an alert"></parameter>
+		<parameter name="browser" value="firefox"></parameter>
+		<classes>
+			<class name="com.herokuapp.theinternet.tests.alertstests.AlertsTests"/>
+		</classes>
+	</test>
+	
+</suite>

@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="CheckboxesTestSuite" verbose="1">
+	
+	<test name="CheckboxesTest-CH">
+		<parameter name="browser" value="chrome"></parameter>
+		<classes>
+			<class name="com.herokuapp.theinternet.tests.checkboxestests.CheckboxesTests"/>
+		</classes>
+	</test>
+
+	<test name="CheckboxesTest-FF">
+		<parameter name="browser" value="firefox"></parameter>
+		<classes>
+			<class name="com.herokuapp.theinternet.tests.checkboxestests.CheckboxesTests"/>
+		</classes>
+	</test>
+	
+</suite>
