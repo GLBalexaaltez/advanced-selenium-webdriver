@@ -1,5 +1,6 @@
 package com.herokuapp.theinternet.base;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -23,16 +24,19 @@ public class BrowserDriverFactory {
 
         switch (browser) {
             case "chrome":
-                System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
+                //System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
+                WebDriverManager.chromedriver().setup();
                 driver.set(new ChromeDriver());
                 break;
             case "firefox":
-                System.setProperty("webdriver.gecko.driver", "src/main/resources/geckodriver.exe");
+                //System.setProperty("webdriver.gecko.driver", "src/main/resources/geckodriver.exe");
+                WebDriverManager.firefoxdriver().setup();
                 driver.set(new FirefoxDriver());
                 break;
             default:
                 System.out.println("Do not know how to start: " + browser + ", starting chrome.");
-                System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
+                //System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
+                WebDriverManager.chromedriver().setup();
                 driver.set(new ChromeDriver());
                 break;
         }
