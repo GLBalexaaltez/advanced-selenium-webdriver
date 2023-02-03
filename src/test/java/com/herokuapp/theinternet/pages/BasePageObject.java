@@ -103,4 +103,8 @@ public class BasePageObject {
         wait.until(ExpectedConditions.alertIsPresent());
         return driver.switchTo().alert();
     }
+
+    protected void switchToFrame(By frameLocator){
+        driver.switchTo().frame(find(frameLocator));
+    }
 }

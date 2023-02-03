@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="EditorTestsSuite" verbose="1">
+	
+	<test name="EditorTest-CH">
+		<parameter name="browser" value="chrome"></parameter>
+		<classes>
+			<class name="com.herokuapp.theinternet.tests.editortests.EditorTests"/>
+		</classes>
+	</test>
+
+	<test name="EditorTest-FF">
+		<parameter name="browser" value="firefox"></parameter>
+		<classes>
+			<class name="com.herokuapp.theinternet.tests.editortests.EditorTests"/>
+		</classes>
+	</test>
+	
+</suite>
