@@ -14,6 +14,8 @@ public class EditorTests extends TestUtilities {
         WelcomePage welcomePage = new WelcomePage(driver, log);
         welcomePage.openPage();
 
+        welcomePage.scrollToBottom();
+
         EditorPage editorPage = welcomePage.clickEditorLink();
 
         String editorText = editorPage.getEditorText();

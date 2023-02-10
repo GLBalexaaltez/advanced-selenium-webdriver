@@ -2,6 +2,7 @@ package com.herokuapp.theinternet.pages;
 
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 
 public class WelcomePage extends BasePageObject {
@@ -15,6 +16,7 @@ public class WelcomePage extends BasePageObject {
     private By editorLocator = By.linkText("WYSIWYG Editor");
     private By keyPressLocator = By.linkText("Key Presses");
     private By fileUploadLocator = By.linkText("File Upload");
+    private By dragAndDropLocator = By.linkText("Drag and Drop");
 
     public WelcomePage(WebDriver driver, Logger log) {
         super(driver, log);
@@ -71,5 +73,22 @@ public class WelcomePage extends BasePageObject {
         log.info("Clicking File Upload link on Welcome Page");
         click(fileUploadLocator);
         return new FileUploadPage(driver, log);
+    }
+
+    public DragAndDropPage clickDragAndDropLink(){
+        log.info("Clicking File Upload link on Welcome Page");
+        click(dragAndDropLocator);
+        return new DragAndDropPage(driver, log);
+    }
+    // SCROLL COMMANDS
+    // window.scrollBy(x, y); Scroll by a specific amount of pixels
+    // window.scrollTo(x, y); Scroll to a specific location of the page
+    // window.scrollBy(0, document.body.scrollHeight); Scroll to bottom of the page
+    // window.scrollBy(0, 0); Scroll to top of the page
+    // arguments[0]scrollToView(); Scroll to specific element
+    public void scrollToBottom(){
+        log.info("Scrolling to the bottom of the page");
+        JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+        jsExecutor.executeScript("window.scrollTo(0, document.body.scrollHeight)");
     }
 }
