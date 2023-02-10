@@ -14,6 +14,7 @@ public class WelcomePage extends BasePageObject {
     private By multipleWindowsLocator = By.linkText("Multiple Windows");
     private By editorLocator = By.linkText("WYSIWYG Editor");
     private By keyPressLocator = By.linkText("Key Presses");
+    private By fileUploadLocator = By.linkText("File Upload");
 
     public WelcomePage(WebDriver driver, Logger log) {
         super(driver, log);
@@ -64,5 +65,11 @@ public class WelcomePage extends BasePageObject {
         log.info("Clicking Key Presses link on Welcome Page");
         click(keyPressLocator);
         return new KeyPressesPage(driver, log);
+    }
+
+    public FileUploadPage clickFileUploadLink(){
+        log.info("Clicking File Upload link on Welcome Page");
+        click(fileUploadLocator);
+        return new FileUploadPage(driver, log);
     }
 }
