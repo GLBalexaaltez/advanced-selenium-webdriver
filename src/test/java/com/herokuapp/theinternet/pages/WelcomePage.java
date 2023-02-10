@@ -17,7 +17,7 @@ public class WelcomePage extends BasePageObject {
     private By keyPressLocator = By.linkText("Key Presses");
     private By fileUploadLocator = By.linkText("File Upload");
     private By dragAndDropLocator = By.linkText("Drag and Drop");
-
+    private By hoverOverLocator = By.linkText("Hovers");
     public WelcomePage(WebDriver driver, Logger log) {
         super(driver, log);
     }
@@ -76,10 +76,17 @@ public class WelcomePage extends BasePageObject {
     }
 
     public DragAndDropPage clickDragAndDropLink(){
-        log.info("Clicking File Upload link on Welcome Page");
+        log.info("Clicking Drag and Drop link on Welcome Page");
         click(dragAndDropLocator);
         return new DragAndDropPage(driver, log);
     }
+
+    public HoverOverPage clickHoverOverLink(){
+        log.info("Clicking Hover Over link on Welcome Page");
+        click(hoverOverLocator);
+        return new HoverOverPage(driver, log);
+    }
+
     // SCROLL COMMANDS
     // window.scrollBy(x, y); Scroll by a specific amount of pixels
     // window.scrollTo(x, y); Scroll to a specific location of the page
